@@ -1,20 +1,20 @@
 def open_file(filename):
     with open(filename, "r") as fin:
         data = fin.read()
+        data = data.lower()
         return data
-
-
-def clean_text(text):
-    lower_text = text.lower()
-    return lower_text
 
 
 def string_to_list(text):
     the_list = text.split("\n")
-    the_list = map(lambda i: i.strip(), the_list)
-    the_list = filter(lambda i: i != i.isspace(), the_list)
-    the_list = filter(lambda i: i != "", the_list)
     return the_list
+
+
+def clean_text(a_list):
+    no_trailing_spaces = map(lambda i: i.strip(), a_list)
+    no_empty_items = filter(lambda i: i != i.isspace(), no_trailing_spaces)
+    cleaned_text = filter(lambda i: i != "", no_empty_items)
+    return cleaned_text
 
 
 def match_strings(list_w_terms, reference_file):
@@ -31,8 +31,8 @@ def match_strings(list_w_terms, reference_file):
 if __name__ == "__main__":
     legacy = open_file("recources/occupations_from_legacy_taxonomy.txt")
     ontology = open_file("recources/ontology_all_occupations.txt")
-    lower_legacy = clean_text(legacy)
-    lower_ontology = clean_text(ontology)
-    legacy_occupations = string_to_list(lower_legacy)
-    ontology_occupations = string_to_list(lower_ontology)
-    match_strings(ontology_occupations, legacy_occupations)
+    legacy_occupations = string_to_list(legacy)
+    ontology_occupations = string_to_list(ontology)
+    cleaned_legacy = clean_text(legacy_occupations)
+    cleaned_ontology = clean_text(ontology_occupations)
+    match_strings(cleaned_ontology, cleaned_legacy)
