@@ -8,6 +8,7 @@ def clean_text(text):
     lower_text = text.lower()
     return lower_text
 
+
 def string_to_list(text):
     the_list = text.split("\n")
     the_list = map(lambda i: i.strip(), the_list)
@@ -35,4 +36,3 @@ if __name__ == "__main__":
     legacy_occupations = string_to_list(lower_legacy)
     ontology_occupations = string_to_list(lower_ontology)
     match_strings(ontology_occupations, legacy_occupations)
-
