@@ -24,8 +24,8 @@ def match_strings(list_w_terms, reference_file):
     difference1 = set1.difference(set2)
     difference2 = set2.difference(set1)
     print("Matches:", len(matches))
-    print("Not matchning in list with terms:", len(difference1))
-    print("Not matchning in reference file:", len(difference2))
+    print("Number matching in list with terms:", len(difference1))
+    print("Number matching in reference file:", len(difference2))
 
 
 if __name__ == "__main__":
