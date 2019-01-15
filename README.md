@@ -35,7 +35,7 @@ Python 3
 ## Contributing
 
 Please read [CONTRIBUTING.md]( 
-        https://github.com/JobtechSwe/batfish-ont-tax/contributing.md
+        https://github.com/JobtechSwe/batfish-ont-tax/blob/master/CONTRIBUTING.md
       ) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
