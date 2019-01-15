@@ -24,15 +24,16 @@ def match_strings(list_w_terms, reference_file):
     difference1 = set1.difference(set2)
     difference2 = set2.difference(set1)
     print("Matches:", len(matches))
-    print("Number matching in list with terms:", len(difference1))
-    print("Number matching in reference file:", len(difference2))
+    print("Number of words not matched in data mined words:", len(difference1))
+    print("Number of words not matched in legacy taxonomy:", len(difference2))
+    return matches, difference1, difference2
 
 
-def do_the_match():
-    legacy = open_file("resources/occupations_from_legacy_taxonomy.txt")
-    ontology = open_file("resources/ontology_all_occupations.txt")
+def match(t_file, dm_file):
+    legacy = open_file(t_file)
+    ontology = open_file(dm_file)
     legacy_occupations = string_to_list(legacy)
     ontology_occupations = string_to_list(ontology)
     cleaned_legacy = clean_text(legacy_occupations)
     cleaned_ontology = clean_text(ontology_occupations)
-    match_strings(cleaned_ontology, cleaned_legacy)
+    return match_strings(cleaned_ontology, cleaned_legacy)
