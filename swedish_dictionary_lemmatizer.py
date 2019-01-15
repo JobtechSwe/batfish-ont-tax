@@ -1,4 +1,4 @@
-from exact_matches import open_file, string_to_list, clean_text
+from utils import open_file, string_to_list, clean_text
 from spacy_swedish_lemmatizer_data import lookup
 from functools import *
 from pydash import *
