@@ -1,0 +1,39 @@
+
+                Swedish Python Routines (SPyRo)
+
+
+
+This is a small Python library for managing the SALDO lexicon, including
+compound splitting.
+
+
+    INSTALLING
+
+Simply copy this directory into your PYTHONPATH.
+
+First you need to download saldo.xml and saldom.xml from Språkbanken:
+
+  http://spraakbanken.gu.se/eng/sblex/resources#saldo
+  http://spraakbanken.gu.se/eng/sblex/resources#saldom
+
+Then create a directory indicated by DATA_PATH in saldo.py (you may want to
+change this variable). This is where the SALDO database will be written to.
+Run the xmlsaldo script:
+
+  python xmlsaldo.py saldo.xml saldom.xml
+
+After about five minutes, you should be ready to go.
+
+
+    USING
+
+splitter.py can also be used to split compounds on the commandline:
+
+  python splitter.py glasskål NN
+
+More information can be found in the following paper:
+
+  Robert Östling and Mats Wirén: Compounding in a Swedish Blog Corpus
+  Språkvetenskapliga föreningens årsskrift
+  Stockholm University, 2013
+
